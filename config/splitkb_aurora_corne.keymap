@@ -18,6 +18,13 @@
             mods = <(MOD_RSFT|MOD_LSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
+        spc_tab: space_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp TAB>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
     };
 }; 
 
@@ -28,42 +35,42 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
-// | SHFT |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |      |
+// | SHFT |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  | SHFT |
 // | CTRL |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ALT  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp ESC   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
-   &kp LSHFT &kp A &kp R &kp S &kp T &kp G   &kp M &kp N &kp E     &kp I   &kp O     &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &kp RALT
-                  &kp LGUI &mo 2 &kp SPACE   &kp RET &mo 1 &kp RALT
+   &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
+   &kp LSHFT &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RSHFT
+   &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &kp LALT
+                  &kp LGUI &mo 2 &kp &spc_tab  &kp RET &mo 1 &trans
                         >;
                 };
 
                 symbol_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  '  |  <  |  >  |  "  |  .  |   |  &  |  _  |  [  |  ]  |  %  | BKSP |
-// | SHFT |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  |      |
+// | SHFT |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  | SHFT |
 // | CTRL |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  | ALT  |
 //                    |     |     | SPC |   | ENT |     |     |
                         bindings = <
    &kp ESC   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT      &kp AMPS  &kp UNDER &kp LBKT &kp RBKT &kp PRCNT &bspc_del
-   &kp LSHFT &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH     &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK &trans
-   &kp LCTRL &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &kp GRAVE    &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT    &kp RALT
-                                     &kp LGUI &trans &kp SPACE    &kp RET &trans &kp RALT
+   &kp LSHFT &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH     &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK &kp RSHFT
+   &kp LCTRL &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &kp GRAVE    &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT    &kp LALT
+                                     &kp LGUI &trans &spc_tab     &kp RET &trans &kp RALT
                         >;
                 };
 
                 number_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  0  |  7  |  8  |  9  | PRNT|   |     |     |     |     |     | BKSP |
-// | CTRL |  0  |  4  |  5  |  6  |     |   |  ⬅ |  ⬇  |  ⬆  |  ⮕ |     |     |
-// | SHFT |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     | ALT  |
+// | SHFT |  0  |  4  |  5  |  6  |     |   |  ⬅ |  ⬇  |  ⬆  |  ⮕ |     | SHFT |
+// | CTRL |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     | ALT  |
 //                    |     |     | SPC |   | ENT |     |     |
                         bindings = <
    &kp TAB   &kp N0 &kp N7 &kp N8 &kp N9 &kp PRCNT   &trans &trans   &trans   &trans &trans    &bspc_del
-   &kp LSHFT &kp N0 &kp N4 &kp N5 &kp N6 &trans      &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
-   &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans      &trans &trans   &trans   &trans &trans    &kp RALT
-                         &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+   &kp LSHFT &kp N0 &kp N4 &kp N5 &kp N6 &trans      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &kp RSHFT
+   &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans      &trans &trans   &trans   &trans &trans    &kp LALT
+                         &kp LGUI &trans &spc_tab    &kp RET &trans &kp RALT
                         >;
                 };
         };
