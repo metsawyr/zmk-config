@@ -42,7 +42,7 @@
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
    &kp LSHFT &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RSHFT
    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &kp LALT
-                  &kp LGUI &mo 2 &kp &spc_tab  &kp RET &mo 1 &trans
+                  &kp LGUI &mo 2 &spc_tab      &kp RET &mo 1 &trans
                         >;
                 };
 
