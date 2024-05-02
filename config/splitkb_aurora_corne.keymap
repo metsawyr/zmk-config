@@ -19,12 +19,12 @@
             mods = <(MOD_RSFT|MOD_LSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
-        spc_tab: space_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SPACE_TAB";
+        q_tab: q_tab {
+            compatible = "zmk,behaviour-mod-morph";
+            label = "Q_TAB";
             #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp TAB>;
-            mods = <(MOD_RSFT|MOD_LSFT)>;
+            bindings = <&kp Q>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
         };
     };
 }; 
@@ -43,7 +43,7 @@
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
    &kp LSHFT &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RSHFT
    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &kp LALT
-                  &kp LGUI &mo 2 &spc_tab      &kp RET &mo 1 &trans
+               &kp LGUI &mo 2 &mt LALT SPC     &mt LSHFT RET &mo 1 &trans
                         >;
                 };
 
