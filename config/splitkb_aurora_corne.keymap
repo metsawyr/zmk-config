@@ -23,6 +23,12 @@
             mods = <(MOD_RSFT|MOD_LSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
+        alt_gui: alt_gui {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LALT>, <&kp LGUI>;
+        };
     };
 }; 
 
@@ -33,42 +39,42 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP/DEL |
-// |  TAB |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |          |
+// |  TAB |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |   ENT    |
 // | CTRL |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |          |
-//                 | GUI | L2 | SPC/ALT |   | ENT/SHFT | L1 |     |
+//                 | ALT/GUI | L2 | SPC |   | SHFT | L1 |     |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
-   &kp TAB   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &trans
+   &kp TAB   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RET
    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &trans
-               &kp LGUI &mo 2 &mt LALT SPC     &mt LSHFT RET &mo 1 &trans
+                    &alt_gui &mo 2 &mt SPC     &kp LSHFT &mo 1 &trans
                         >;
                 };
 
                 symbol_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  '  |  <  |  >  |  "  |  .  |   |  &  |  _  |  [  |  ]  |  %  | BKSP/DEL |
-// |  TAB |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  |          |
+// |  TAB |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  |   ENT    |
 // | CTRL |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  |          |
-//                |     |     | SPC/ALT |   | ENT/SHFT |     |     |
+//                | ALT/GUI |     | SPC |   | SHFT |     |     |
                         bindings = <
    &kp ESC   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT       &kp AMPS  &kp UNDER &kp LBKT &kp RBKT &kp PRCNT &bspc_del
-   &kp TAB   &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH      &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK &trans
+   &kp TAB   &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH      &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK &kp RET
    &kp LCTRL &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &kp GRAVE     &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT    &trans
-                                  &kp LGUI &trans &mt LALT SPC     &mt LSHFT RET &trans &trans
+                                        &alt_gui &trans &mt SPC    &kp LSHFT &trans &trans
                         >;
                 };
 
                 number_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  0  |  7  |  8  |  9  | PRNT|   |     |     |     |     | POW | BKSP/DEL |
-// |  TAB |  0  |  4  |  5  |  6  |     |   |  ⬅ |  ⬇  |  ⬆  |  ⮕ |     |          |
+// |  TAB |  0  |  4  |  5  |  6  |     |   |  ⬅ |  ⬇  |  ⬆  |  ⮕ |     |   ENT    |
 // | CTRL |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     |          |
-//                |     |     | SPC/ALT |   | ENT/SHFT |     |     |
+//                | ALT/GUI |     | SPC |   | SHFT |     |     |
                         bindings = <
    &kp ESC   &kp N0 &kp N7 &kp N8 &kp N9 &kp PRCNT     &trans   &trans   &trans   &trans    &ext_power EP_TOG &bspc_del
-   &kp TAB   &kp N0 &kp N4 &kp N5 &kp N6 &trans        &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans            &trans
+   &kp TAB   &kp N0 &kp N4 &kp N5 &kp N6 &trans        &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans            &kp RET           
    &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans        &trans   &trans   &trans   &trans    &trans            &trans
-                      &kp LGUI &trans &mt LALT SPC     &mt LSHFT RET &trans &trans
+                           &alt_gui &trans &mt SPC     &kp LSHFT &trans &trans
                         >;
                 };
         };
