@@ -9,6 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+&spi3 {
+    status = "disabled";
+};
+
 / { 
     behaviors {
         bspc_del: backspace_delete {
