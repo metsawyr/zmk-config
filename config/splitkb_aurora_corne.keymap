@@ -19,13 +19,6 @@
             mods = <(MOD_RSFT|MOD_LSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
-        q_tab: q_tab {
-            compatible = "zmk,behaviour-mod-morph";
-            label = "Q_TAB";
-            #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp TAB>;
-            mods = <(MOD_LALT)>;
-        };
     };
 }; 
 
@@ -35,43 +28,43 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
-// | SHFT |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  | SHFT |
-// | CTRL |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | ALT  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |  ESC |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP/DEL |
+// |  TAB |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |          |
+// | CTRL |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |          |
+//                 | GUI | L2 | SPC/ALT |   | ENT/SHFT | L1 |     |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
-   &kp LSHFT &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RSHFT
-   &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &kp LALT
+   &kp TAB   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &trans
+   &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &trans
                &kp LGUI &mo 2 &mt LALT SPC     &mt LSHFT RET &mo 1 &trans
                         >;
                 };
 
                 symbol_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  '  |  <  |  >  |  "  |  .  |   |  &  |  _  |  [  |  ]  |  %  | BKSP |
-// | SHFT |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  | SHFT |
-// | CTRL |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  | ALT  |
-//                    |     |     | SPC |   | ENT |     |     |
+// |  ESC |  '  |  <  |  >  |  "  |  .  |   |  &  |  _  |  [  |  ]  |  %  | BKSP/DEL |
+// |  TAB |  !  |  -  |  +  |  =  |  #  |   |  |  |  :  |  (  |  )  |  ?  |          |
+// | CTRL |  ^  |  /  |  *  |  \  |  `  |   |  ~  |  $  |  {  |  }  |  @  |          |
+//                |     |     | SPC/ALT |   | ENT/SHFT |     |     |
                         bindings = <
-   &kp ESC   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT      &kp AMPS  &kp UNDER &kp LBKT &kp RBKT &kp PRCNT &bspc_del
-   &kp LSHFT &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH     &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK &kp RSHFT
-   &kp LCTRL &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &kp GRAVE    &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT    &kp LALT
-                                     &kp LGUI &trans &spc_tab     &kp RET &trans &kp RALT
+   &kp ESC   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT       &kp AMPS  &kp UNDER &kp LBKT &kp RBKT &kp PRCNT &bspc_del
+   &kp TAB   &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH      &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK &trans
+   &kp LCTRL &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &kp GRAVE     &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT    &trans
+                                  &kp LGUI &trans &mt LALT SPC     &mt LSHFT RET &trans &trans
                         >;
                 };
 
                 number_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  0  |  7  |  8  |  9  | PRNT|   |     |     |     |     | POW | BKSP |
-// | SHFT |  0  |  4  |  5  |  6  |     |   |  ⬅ |  ⬇  |  ⬆  |  ⮕ |     | SHFT |
-// | CTRL |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     | ALT  |
-//                    |     |     | SPC |   | ENT |     |     |
+// |  ESC |  0  |  7  |  8  |  9  | PRNT|   |     |     |     |     | POW | BKSP/DEL |
+// |  TAB |  0  |  4  |  5  |  6  |     |   |  ⬅ |  ⬇  |  ⬆  |  ⮕ |     |          |
+// | CTRL |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     |          |
+//                |     |     | SPC/ALT |   | ENT/SHFT |     |     |
                         bindings = <
-   &kp TAB   &kp N0 &kp N7 &kp N8 &kp N9 &kp PRCNT   &trans   &trans   &trans   &trans    &ext_power EP_TOG &bspc_del
-   &kp LSHFT &kp N0 &kp N4 &kp N5 &kp N6 &trans      &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans            &kp RSHFT
-   &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans      &trans   &trans   &trans   &trans    &trans            &kp LALT
-                         &kp LGUI &trans &spc_tab    &kp RET &trans &kp RALT
+   &kp ESC   &kp N0 &kp N7 &kp N8 &kp N9 &kp PRCNT     &trans   &trans   &trans   &trans    &ext_power EP_TOG &bspc_del
+   &kp TAB   &kp N0 &kp N4 &kp N5 &kp N6 &trans        &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans            &trans
+   &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans        &trans   &trans   &trans   &trans    &trans            &trans
+                      &kp LGUI &trans &mt LALT SPC     &mt LSHFT RET &trans &trans
                         >;
                 };
         };
