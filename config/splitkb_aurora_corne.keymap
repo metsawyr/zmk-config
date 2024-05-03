@@ -46,7 +46,7 @@
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
    &kp TAB   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RET
    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &trans
-                    &alt_gui &mo 2 &mt SPC     &kp LSHFT &mo 1 &trans
+                    &alt_gui &mo 2 &kp SPC     &kp LSHFT &mo 1 &trans
                         >;
                 };
 
@@ -60,7 +60,7 @@
    &kp ESC   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT       &kp AMPS  &kp UNDER &kp LBKT &kp RBKT &kp PRCNT &bspc_del
    &kp TAB   &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH      &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK &kp RET
    &kp LCTRL &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &kp GRAVE     &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT    &trans
-                                        &alt_gui &trans &mt SPC    &kp LSHFT &trans &trans
+                                        &alt_gui &trans &kp SPC    &kp LSHFT &trans &trans
                         >;
                 };
 
@@ -74,7 +74,7 @@
    &kp ESC   &kp N0 &kp N7 &kp N8 &kp N9 &kp PRCNT     &trans   &trans   &trans   &trans    &ext_power EP_TOG &bspc_del
    &kp TAB   &kp N0 &kp N4 &kp N5 &kp N6 &trans        &kp LEFT &kp DOWN &kp UP   &kp RIGHT &trans            &kp RET           
    &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans        &trans   &trans   &trans   &trans    &trans            &trans
-                           &alt_gui &trans &mt SPC     &kp LSHFT &trans &trans
+                           &alt_gui &trans &kp SPC     &kp LSHFT &trans &trans
                         >;
                 };
         };
