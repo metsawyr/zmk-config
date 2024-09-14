@@ -77,6 +77,7 @@
                            &alt_gui &trans &kp SPC     &kp LSHFT &trans &tog 4
                         >;
                 };
+
                 deadlock_game_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC |  Q  |  W  |  F  |  P  |  B  |   |     |     |     |     |     |          |
@@ -89,5 +90,6 @@
    &kp LALT  &kp Z &kp X &kp C &kp D &kp V     &none &none &none &none &none &none
                &kp LCTRL &kp LSHFT &kp SPC     &none &none &tog 4
                         >;
+                };
         };
 };
