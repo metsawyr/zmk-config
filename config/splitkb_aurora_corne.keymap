@@ -79,15 +79,15 @@
                 };
                 deadlock_game_layer {
 // -----------------------------------------------------------------------------------------
-// | LALT |  Q  |  W  |  F  |  P  |  B  |   |     |     |     |     |     |          |
-// | CAPS |  A  |  R  |  S  |  T  |  G  |   |     |     |     |     |     |          |
-// | TAB  |  Z  |  X  |  C  |  D  |  V  |   |     |     |     |     |     |          |
-//                | ESC | LCTRL | LSHFT |   |     |     | L1 |
+// | ESC |  Q  |  W  |  F  |  P  |  B  |   |     |     |     |     |     |          |
+// | TAB |  A  |  R  |  S  |  T  |  G  |   |     |     |     |     |     |          |
+// | ALT  |  Z  |  X  |  C  |  D  |  V  |   |     |     |     |     |     |          |
+//                  | CTRL | SHFT | SPC |   |     |     | L1 |
                         bindings = <
-   &kp LALT   &kp Q &kp W &kp F &kp P &kp B     &none &none &none &none &none &none
-   &kp CAPS   &kp A &kp R &kp S &kp T &kp G     &none &none &none &none &none &none
-   &kp TAB    &kp Z &kp X &kp C &kp D &kp V     &none &none &none &none &none &none
-                   &kp ESC &LCTRL &kp LSHFT     &none &none &tog 4
+   &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &none &none &none &none &none &none
+   &kp TAB   &kp A &kp R &kp S &kp T &kp G     &none &none &none &none &none &none
+   &kp LALT  &kp Z &kp X &kp C &kp D &kp V     &none &none &none &none &none &none
+               &kp LCTRL &kp LSHFT &kp SPC     &none &none &tog 4
                         >;
         };
 };
