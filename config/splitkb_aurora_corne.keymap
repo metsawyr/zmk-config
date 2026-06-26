@@ -13,6 +13,10 @@
     status = "disabled";
 };
 
+&sl {
+    ignore-modifiers;
+};
+
 / { 
     behaviors {
         bspc_del: backspace_delete {
@@ -72,7 +76,7 @@
                 number_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  0  |  7  |  8  |  9  | PRNT|   |     |     |     |     | OFF | BKSP/DEL |
-// |  TAB |  0  |  4  |  5  |  6  |     |   |  ⬅ |  ⬇  |  ⬆  |  ⮕ |  ON |   ENT    |
+// |  TAB |  0  |  4  |  5  |  6  |     |   |  ⬅  |  ⬇  |  ⬆  |  ⮕  |  ON |   ENT    |
 // | CTRL |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     |          |
 //                | ALT/GUI |     | SPC |   | SHFT |     | L4 |
                         bindings = <
@@ -102,15 +106,15 @@
 // Hold L4 (right outer thumb) + tap number = super+N (workspace switch)
 // Hold L4 + hold SHFT (right inner thumb) + tap number = super+shift+N (move to workspace)
 // -----------------------------------------------------------------------------------------
-// |     |     | LG7 | LG8 | LG9 |     |   |     |     |     |     |     |     |
-// |     |     | LG4 | LG5 | LG6 |     |   |     | LGH | LGJ | LGK | LGL |     |
-// |     |     | LG1 | LG2 | LG3 |     |   |     |     |     |     |     |     |
-//                   |     |     |     |   |     |     |     |
+// | LGQ |     | LG7 | LG8 | LG9 | LGF |   |     |      |     |     |     |       |
+// |     |     | LG4 | LG5 | LG6 |     |   |     | LGH  | LGJ | LGK | LGL | LGENT |
+// |     |     | LG1 | LG2 | LG3 |     |   |     |      |     |     |     |       |
+//                 |     |     | LGSPC |   |     | SHFT |     |		|
                         bindings = <
-   &trans &trans &kp LG(N7) &kp LG(N8) &kp LG(N9) &trans     &trans &trans    &trans    &trans    &trans    &trans
-   &trans &trans &kp LG(N4) &kp LG(N5) &kp LG(N6) &trans     &trans &kp LG(H) &kp LG(J) &kp LG(K) &kp LG(L) &trans
-   &trans &trans &kp LG(N1) &kp LG(N2) &kp LG(N3) &trans     &trans &trans    &trans    &trans    &trans    &trans
-                                    &trans &trans &trans     &trans &trans &trans
+   &kp LG(Q) &trans &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(F)   &trans    &trans    &trans    &trans    &trans &trans
+   &trans    &trans &kp LG(N4) &kp LG(N5) &kp LG(N6) &trans      &kp LG(H) &kp LG(J) &kp LG(K) &kp LG(L) &trans &kp LG(RET)
+   &trans    &trans &kp LG(N1) &kp LG(N2) &kp LG(N3) &trans      &trans    &trans    &trans    &trans    &trans &trans
+                                    &trans &trans &kp LG(SPC)    &kp LSHFT &trans &trans
                         >;
                 };
         };
