@@ -32,12 +32,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp LALT>, <&kp LGUI>;
         };
-        td_caps: tap_dance_caps {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHFT>, <&caps_word>;
-        };
     };
 }; 
 
@@ -55,7 +49,7 @@
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
    &kp TAB   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RET
    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &trans
-                    &alt_gui &mo 2 &kp SPC     &td_caps &mo 1 &sl 4
+                    &alt_gui &mo 2 &kp SPC     &kp LSHFT &mo 1 &sl 4
                         >;
                 };
 
@@ -80,10 +74,10 @@
 // | CTRL |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     |          |
 //                | ALT/GUI |     | SPC |   | SHFT |     | L4 |
                         bindings = <
-   &kp ESC   &kp N0 &kp N7 &kp N8 &kp N9 &kp PRCNT     &trans   &trans   &trans   &trans    &ext_power EP_OFF &bspc_del
-   &kp TAB   &kp N0 &kp N4 &kp N5 &kp N6 &trans        &kp LEFT &kp DOWN &kp UP   &kp RIGHT &ext_power EP_ON  &kp RET           
-   &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans        &trans   &trans   &trans   &trans    &trans            &trans
-                           &alt_gui &trans &kp SPC     &kp LSHFT &trans &tog 3
+   &kp ESC   &kp N0 &kp N7 &kp N8 &kp N9 &kp PRCNT     &trans     &trans   &trans   &trans    &ext_power EP_OFF &bspc_del
+   &kp TAB   &kp N0 &kp N4 &kp N5 &kp N6 &trans        &kp LEFT   &kp DOWN &kp UP   &kp RIGHT &ext_power EP_ON  &kp RET           
+   &kp LCTRL &kp N0 &kp N1 &kp N2 &kp N3 &trans        &trans     &trans   &trans   &trans    &trans            &trans
+                           &alt_gui &trans &kp SPC     &caps_word &trans &tog 3
                         >;
                 };
 
@@ -102,19 +96,16 @@
                 };
 
                 hyprland_layer {
-// Numbers with GUI baked in, matching number_layer positions.
-// Hold L4 (right outer thumb) + tap number = super+N (workspace switch)
-// Hold L4 + hold SHFT (right inner thumb) + tap number = super+shift+N (move to workspace)
 // -----------------------------------------------------------------------------------------
 // | LGQ |     | LG7 | LG8 | LG9 | LGF |   |     |      |     |     |     |       |
 // |     |     | LG4 | LG5 | LG6 |     |   |     | LGH  | LGJ | LGK | LGL | LGENT |
 // |     |     | LG1 | LG2 | LG3 |     |   |     |      |     |     |     |       |
-//                 |     |     | LGSPC |   |     | SHFT |     |		|
+//                 |     |     | LGSPC |   |     |     |     |
                         bindings = <
    &kp LG(Q) &trans &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(F)   &trans    &trans    &trans    &trans    &trans &trans
    &trans    &trans &kp LG(N4) &kp LG(N5) &kp LG(N6) &trans      &kp LG(H) &kp LG(J) &kp LG(K) &kp LG(L) &trans &kp LG(RET)
    &trans    &trans &kp LG(N1) &kp LG(N2) &kp LG(N3) &trans      &trans    &trans    &trans    &trans    &trans &trans
-                                    &trans &trans &kp LG(SPC)    &kp LSHFT &trans &trans
+                                    &trans &trans &kp LG(SPC)    &trans &trans &trans
                         >;
                 };
         };
