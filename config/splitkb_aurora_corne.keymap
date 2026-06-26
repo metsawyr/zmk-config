@@ -29,6 +29,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp LALT>, <&kp LGUI>;
         };
+        td_caps: tap_dance_caps {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHFT>, <&caps_word>;
+        };
     };
 }; 
 
@@ -46,7 +52,7 @@
    &kp ESC   &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U     &kp Y   &kp SEMI  &bspc_del
    &kp TAB   &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E     &kp I   &kp O     &kp RET
    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &trans
-                    &alt_gui &mo 2 &kp SPC     &kp LSHFT &mo 1 &sl 4
+                    &alt_gui &mo 2 &kp SPC     &td_caps &mo 1 &sl 4
                         >;
                 };
 
